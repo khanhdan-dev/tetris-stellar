@@ -11,7 +11,10 @@ import {
   NotFoundError,
   BASE_FEE,
   Memo,
+  Contract,
 } from "stellar-sdk";
+console.log("Contract: ", Contract);
+
 import Head from "next/head";
 const testSecretId = "SBYUX4IXH7CPWY2QSCUDD4J7VVYS7BQZRFSDJJM6P6UQSEYYUYIJT56M";
 const testReceiveId =
