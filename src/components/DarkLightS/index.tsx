@@ -1,24 +1,15 @@
-import React, { ChangeEventHandler, useState } from "react";
+import React from "react";
+import { useDarkMode } from "../particles/hooks/useDarkModeTest";
 
 function DarkLightSwitcher() {
-  const [themeMode, setThemeMode] = useState(false);
-  const handleSwitchTheme: ChangeEventHandler<HTMLInputElement> = (event) => {
-    console.log("Event: ", event.target.checked);
-    localStorage.setItem(
-      "THEME-SWITCHMODE",
-      event.target.checked ? "dark" : "light",
-    );
-    const test = localStorage.getItem("THEME-SWITCHMODE");
-
-    console.log("++++++++TEST: ", test);
-  };
+const [theme,toggleTheme]=useDarkMode()
   return (
     <label className="inline-flex cursor-pointer items-center">
       <input
         type="checkbox"
-        value=""
+        value={theme}
         className="peer sr-only"
-        onChange={handleSwitchTheme}
+        onChange={()=>toggleTheme()}
       />
       <div className="shadow-inner-light peer relative h-6 w-11 rounded-full bg-blue-500 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:bg-white after:transition-all after:content-[''] peer-checked:bg-black peer-checked:after:translate-x-full peer-focus:border-none peer-focus:ring-4 dark:bg-gray-700 rtl:peer-checked:after:-translate-x-full">
         <svg

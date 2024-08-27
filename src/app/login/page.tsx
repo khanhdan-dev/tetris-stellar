@@ -18,9 +18,6 @@ export default function Login() {
   } = useForm<IData>();
   const [isShowPassword, setPassword] = useState(false);
   const onSubmit = (data: IData) => console.log(data);
-  console.log("====================================");
-  console.log("LocalStr: ", localStorage.getItem("THEME-SWITCHMODE"));
-  console.log("====================================");
   function showPassword() {
     setPassword((prevState) => !prevState);
   }

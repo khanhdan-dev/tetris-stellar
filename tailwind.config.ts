@@ -5,7 +5,7 @@ import plugin from "tw-neumorphism";
 
 const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
-  darkMode: "selector",
+  darkMode: "class",
   theme: {
     screens: {
       xs: "375px", // mobile medium
@@ -70,6 +70,9 @@ const config: Config = {
         "inset 0px 5px 15px rgba(0, 0, 0, 0.25), inset 0px -5px 15px rgba(255, 255, 255, 0.4)",
       //   "custom-dark": "-4px -4px 10px rgba(0, 0, 0, 0.2)",
       // Add more custom shadows as needed
+    },
+    theme: {
+      extend: {},
     },
   },
   plugins: [plugin],
